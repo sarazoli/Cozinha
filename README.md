@@ -7,8 +7,7 @@ Cozinha! é um aplicativo mobile desenvolvido com **Ionic + Angular** e integrad
 ## Integrantes
 
 - Sara Oliveira  
-- Ana  
-- Carolyna  
+- Ana Carolyna  
 - Caio Pita  
 
 ---
