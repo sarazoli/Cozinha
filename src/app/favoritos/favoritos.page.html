@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+
+
+  <ion-toolbar>
+     <ion-title class="ion-text-center">
+ Favoritos
+    </ion-title>
+    <ion-buttons slot="start">
+    <ion-button color="primary" routerLink="/categorias">
+     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="orange" viewBox="0 0 24 24">
+      <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+    </svg>
+    </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+
+<ion-card *ngIf="mostraCard">
+  <ion-item button lines="none" Routerlink="/receita">
+    <ion-avatar slot="start">
+    <img src="assets/icon/images.jpeg" alt="Hambúrguer" />
+    </ion-avatar>
+
+    <ion-label>Hamburguer</ion-label>
+
+    <ion-button fill="clear" slot="end" (click)="toggleFavorito()">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg"  width="24" height="24" fill="orange"stroke-width="2" viewBox="0 0 24 24" >
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+      </svg>
+    </ion-button>
+  </ion-item>
+</ion-card>
+
+
+</ion-content>

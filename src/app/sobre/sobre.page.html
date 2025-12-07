@@ -1,0 +1,165 @@
+<!-- CABEÇALHO PERSONALIZADO -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Sobre
+    </ion-title>
+    <!-- Botão de Voltar Personalizado -->
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/config">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="orange" viewBox="0 0 24 24">
+          <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+        </svg>
+      </ion-button>
+    </ion-buttons>
+
+
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="ion-padding">
+
+    <!-- ---------------------------------------------------- -->
+    <!-- CONTEÚDO ORIGINAL FIXO (Sempre Visível) -->
+    <!-- ---------------------------------------------------- -->
+    
+    <ion-card class="card-sobre">
+      <ion-card-content class="ion-padding-horizontal">
+        <p> O <strong class="laranja">Cozinha</strong> é um aplicativo inovador que ajuda as pessoas a descobrirem receitas práticas
+          e personalizadas a partir dos alimentos que elas têm em casa.</p>
+        
+        <p>A <strong>principal funcionalidade</strong> é um scanner de alimentos: basta escanear um ingrediente
+          e o sistema identifica o item, sugerindo receitas correspondentes de forma rápida e inteligente.</p>
+        
+        <p><strong>Nosso objetivo</strong> é facilitar a rotina na cozinha, evitar desperdícios e incentivar uma alimentação mais criativa e saudável.</p>
+
+        <h3 id="titulo-card">Como Funciona?</h3> 
+
+        <p><strong>1- </strong> Escaneie o alimento usando a câmera do celular ou do dispositivo.</p>
+        <p><strong>2- </strong> O aplicativo reconhece o ingrediente.</p>
+        <p><strong>3- </strong> Você recebe sugestões de receitas correspondentes com o item.</p>
+        
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Lista de Recursos Fixa 
+    <ion-list class="info"> 
+      <ion-item>
+        <ion-label>Câmera</ion-label>
+        <ion-badge class="recurso-badge">Recurso Nativo </ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>TheReceitas</ion-label>
+        <ion-badge class="recurso-badge">Api</ion-badge>
+      </ion-item>
+    </ion-list> -->
+
+    <!-- Cabeçalho Criadores Fixo -->
+    <ion-card-header>
+      <div class="header-criadores"> 
+        <div class="divider-right">
+          Criadores
+        </div>
+      </div>
+    </ion-card-header>
+
+    <!-- Cards da Equipe Fixo -->
+    <div class="card-equipe">
+      <ion-card class="card-membro">
+        <ion-item lines="none" detail="false">
+          <ion-label>Ana Carolyna Costa</ion-label>
+          <a href="https://www.instagram.com/" slot="end" target="_blank">
+            <ion-icon slot="end" name="logo-instagram"></ion-icon>
+          </a>
+        </ion-item>
+      </ion-card>
+      <ion-card class="card-membro">
+        <ion-item lines="none" detail="false">
+          <ion-label>Sara Oliveira</ion-label>
+          <a href="https://www.instagram.com/" slot="end" target="_blank">
+            <ion-icon slot="end" name="logo-instagram"></ion-icon>
+          </a>
+        </ion-item>
+      </ion-card>
+      <ion-card class="card-membro">
+        <ion-item lines="none" detail="false">
+          <ion-label>Caio Pita</ion-label>
+          <a href="https://www.instagram.com/" slot="end" target="_blank">
+            <ion-icon slot="end" name="logo-instagram"></ion-icon>
+          </a>
+        </ion-item>
+      </ion-card>
+    </div>
+
+    <!-- ---------------------------------------------------- -->
+    <!-- BARRA DE SEGMENTO E CONTEÚDO CONDICIONAL (NOVAS ABAS) -->
+    <!-- ---------------------------------------------------- -->
+    
+    <!-- A barra de abas agora vem depois do conteúdo fixo -->
+    <ion-segment 
+      [value]="selectedSegment" 
+      (ionChange)="segmentChanged($event)" 
+      mode="md"
+      class="ion-padding-horizontal ion-margin-top"
+  color="dark"
+    >
+      <ion-segment-button  value="turma">
+        <ion-label>Turma</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="unidade">
+        <ion-label>Unidade</ion-label>
+      </ion-segment-button>
+      
+      <ion-segment-button  value="periodo">
+        <ion-label>Período</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div class="ion-padding-top">
+      
+      <!-- CONTEÚDO 1: ABA 'TURMA' (Vazia) -->
+      @if (selectedSegment === 'turma') {
+        <ion-card>
+         
+          <ion-card-content>
+            <p>ADS0301M</p>
+            <!-- O SEU CONTEÚDO DE TURMA ENTRARÁ AQUI -->
+          </ion-card-content>
+        </ion-card>
+      } 
+
+      <!-- CONTEÚDO 2: ABA 'UNIDADE' (Vazia) -->
+      @if (selectedSegment === 'unidade') {
+        <ion-card>
+       
+          <ion-card-content>
+            <p>ADS-BG Manhã</p>
+            <!-- O SEU CONTEÚDO DE UNIDADE ENTRARÁ AQUI -->
+          </ion-card-content>
+        </ion-card>
+      } 
+
+      <!-- CONTEÚDO 3: ABA 'PERÍODO' (Vazia) -->
+      @if (selectedSegment === 'periodo') {
+        <ion-card>
+        
+          <ion-card-content>
+            <p>4º período</p>
+            <!-- O SEU CONTEÚDO DE PERÍODO ENTRARÁ AQUI -->
+          </ion-card-content>
+        </ion-card>
+      } 
+      
+    </div>
+
+  </div> <!-- Fim do ion-padding principal -->
+  
+</ion-content>
+
+
+
+

@@ -1,0 +1,161 @@
+/* Estilo principal da página */
+.login-page {
+  /* Fundo da página (geralmente escuro para dar contraste ao card) */
+  --background: #ffffff; 
+}
+
+/* Fundo Superior (onde aparece a foto) - Use as mesmas técnicas de background da primeira página */
+.top-background {
+  height: 30vh; /* Ocupa cerca de 30% da altura da tela */
+  background: url('src/assets/fotodefundo.jpg') no-repeat center center / cover;
+  /* Aplica um overlay escuro na imagem se necessário */
+  background-color: rgba(0, 0, 0, 0.5);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(243, 43, 43, 0.5); // overlay vermelho
+  }
+}
+
+/* ========================================================================= */
+/* CARD DE LOGIN (Container Branco) */
+/* ========================================================================= */
+.login-card {
+  /* Posicionamento e Estilo */
+  position: absolute;
+  top: 25vh; /* Levanta o card para cobrir um pouco do fundo superior */
+  left: 0;
+  right: 0;
+  
+  background: white;
+  padding: 30px 20px 20px;
+  
+  /* Cantos Arredondados Apenas no Topo */
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar */
+  
+  /* Ajusta a altura restante da página */
+  height: calc(100vh - 25vh); 
+}
+
+/* Título */
+.welcome-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* ========================================================================= */
+/* CAMPOS DE FORMULÁRIO */
+/* ========================================================================= */
+.input-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.required-star {
+  color: red;
+}
+
+.custom-input {
+
+  padding: 15px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 5%;
+
+
+  /* fundo branco */
+  background: #ffffff;
+  color: #000000; /* texto preto */
+ 
+}
+
+.forgot-link {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  color: #a91212; /* Cor de destaque (vermelha) */
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* Botão Principal */
+.main-login-button {
+  --background: #a91212;
+  --border-radius: 5px;
+  --height: 48px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* ========================================================================= */
+/* LOGIN SOCIAL E DIVISOR */
+/* ========================================================================= */
+/* O divisor "Ou" precisa do CSS que você já criou. Inclua-o aqui: */
+.divider {
+  display: flex; 
+  align-items: center; 
+  width: 100%;
+  margin: 30px 0; 
+}
+.divider .line {
+  flex: 1; 
+  height: 1px;
+  background: #ccc; /* Cor cinza para a linha no fundo branco */
+}
+.divider-text {
+  /* Fundo branco opaco para "mascarar" a linha por trás */
+  background: white; 
+  margin: 0 10px; 
+  padding: 0 10px; 
+  color: #666; /* Cor cinza para o "Ou" */
+  font-size: 14px;
+}
+
+
+/* Container para os ícones (Flexbox é a chave para a distribuição) */
+.social-login-container {
+  display: flex;
+  justify-content: space-around; /* Distribui os ícones uniformemente */
+  align-items: center;
+  margin: 30px 0;
+}
+
+.social-icon {
+  font-size: 40px; 
+  cursor: pointer;
+
+  /* Garanta que haja uma cor padrão escura, caso as específicas falhem */
+  color: #333; 
+
+  &.facebook { color: #000; } 
+  &.google { color: #000; } 
+  &.apple { color: #000; } 
+}
+/* Link para Criar Conta */
+.create-account-prompt {
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+  margin-top: 50px; /* Afasta da seção social */
+}
+
+.signup-link {
+  color: #a91212; /* Cor de destaque */
+  font-weight: bold;
+  text-decoration: none;
+}
+.error-message {
+  color: #a91212;;
+  font-size: 14px;
+
+  margin: 4px;
+}

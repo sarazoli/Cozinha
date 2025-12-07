@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/homepage"></ion-back-button>
+    </ion-buttons>
+    <div class="search-container">
+
+    
+    <ion-searchbar
+      placeholder="Buscar Receita"
+      animated="true"
+      show-clear-button="always"
+      (ionInput)="onSearchChange($event)"
+      (ionClear)="onSearchClear()"
+    ></ion-searchbar>
+  </div>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="busca-content zoom-in">
+
+  
+  <!-- linha laranja -->
+  <div class="divider"></div>
+
+  <!-- lista -->
+  <div class="lista-receitas">
+
+    <!-- mensagem de carregando -->
+    <div *ngIf="carregando" class="loading">
+      <ion-spinner name="dots"></ion-spinner>
+      <p>Buscando receitas para "{{ termoBusca }}"...</p>
+    </div>
+
+    <!-- nenhuma receita -->
+    <div *ngIf="!carregando && resultados.length === 0 && termoBusca.length > 0" class="vazio">
+      <p>Nenhuma receita encontrada para "{{ termoBusca }}"</p>
+    </div>
+
+    <!-- card da receita -->
+    <div 
+      class="card" 
+      *ngFor="let receita of resultados"
+      (click)="verDetalhesReceita(receita.id)"
+    >
+
+      <img class="img" [src]="receita.imagem" />
+      
+      <div class="dados">
+        <h3>{{ receita.nome }}</h3>
+      
+      </div>
+
+      <button class="btn-abrir"  (click)="verDetalhesReceita(receita.id)">Abrir</button>
+
+    </div>
+
+  </div>
+
+</ion-content>

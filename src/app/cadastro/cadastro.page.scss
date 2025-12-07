@@ -1,0 +1,141 @@
+ion-content {
+  --background: #ffffff;
+}
+
+.error-msg{
+  font-size: 12px;
+  margin: 4px;
+}
+
+.top-image {
+  height: 180px;
+  background: #f32b2b; // vermelho do topo
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(243, 43, 43, 0.5); // overlay vermelho
+  }
+}
+
+.form-container {
+  position: absolute;
+  top: 25vh; /* Levanta o card para cobrir um pouco do fundo superior */
+  left: 0;
+  right: 0;
+
+  background: white;
+  padding: 30px 20px 20px;
+
+  /* Cantos Arredondados Apenas no Topo */
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  ion-item {
+    margin-bottom: 12px;
+    --background: #e0dddd; // fundo branco do input
+    --color: #000; // cor do texto
+    --border-color: #ccc;
+    --border-radius: 8px;
+  }
+
+  ion-label {
+    font-weight: 500;
+    color: #000000;
+  }
+
+  ion-input {
+    color: #000000;
+  }
+
+  .required {
+    color: red;
+  }
+
+  .btn-proximo {
+    margin-top: 15px;
+    --background: #b41414;
+    --border-radius: 8px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #474747;
+    font-weight: 500;
+    font-size: 14px;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #000000;
+    }
+
+    &:not(:empty)::before {
+      margin-right: 10px;
+    }
+
+    &:not(:empty)::after {
+      margin-left: 10px;
+    }
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+
+    .social {
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .fb {
+      color: #3b5998;
+    }
+
+    .g {
+      color: #db4437;
+    }
+
+    .apple {
+      color: #000;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+
+    a {
+      color: red;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

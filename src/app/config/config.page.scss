@@ -1,0 +1,39 @@
+ion-toolbar {
+  position: relative;
+
+}
+ion-toolbar {
+  box-shadow: 0 2px 0 0 rgb(222, 113, 35); /* 1px de sombra na parte de baixo */
+}
+
+ion-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+ion-card {
+
+  border-radius: 12px;          /* borda arredondada */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra leve */
+}
+
+
+#padding{
+  
+    --padding-start: 0; 
+    --padding-end: 0;
+    
+ 
+
+    --inner-padding-start: 16px; 
+}
+
+
+#padding {
+    /* Adiciona padding horizontal para afastar o conteúdo da borda do card */
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    /* ... seu restante do CSS do ion-card ... */
+}

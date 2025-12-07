@@ -1,0 +1,212 @@
+/* Toolbar transparente */
+
+.toolbar-transparent {
+
+
+  --background: transparent !important;
+  --color: #fff !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.toolbar-transparent ion-title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 22px;
+    padding-left: 5px; 
+}
+
+/* Botões redondos e laranjas */
+.round-orange-btn {
+  --background: #ff7e42 !important; /* Laranja */
+  --color: #fff !important; /* Ícone branco */
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-left: 5px;
+}
+
+/* Ícones maiores */
+.round-orange-btn ion-icon {
+
+   font-size: 26px;  /* Ícone proporcional ao círculo */
+  
+}
+
+
+
+
+.categories-container {
+
+
+
+  /* Mantém a rolagem horizontal */
+  white-space: nowrap; 
+  /* ... */
+}
+
+
+.category-card {
+  position: relative;
+  display: inline-block;
+  width: 140px;
+  height: 200px;
+  margin-right: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+  .category-title {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 5px; /* Adicionado anteriormente para limitar o espaço */
+    color: white;
+    
+    /* MODIFIQUE AQUI: Diminua o valor */
+    font-size: 12px; 
+    
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    white-space: normal; /* Garante que o texto quebre, caso seja longo */
+    line-height: 1.1;
+  }
+  }
+
+
+.recipes-section {
+  padding: 10px 20px;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 0;
+     color: #000000;
+  }
+
+  .subtitle {
+    color: gray;
+    margin-top: 2px;
+  }
+}
+
+.recipe-card {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+
+  img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .recipe-info {
+    padding: 10px;
+
+    h3 {
+      font-size: 1em;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.8em;
+      color: gray;
+      margin: 0;
+    }
+  }
+}
+
+/* BOTÃO FLUTUANTE CENTRALIZADO — FIXO E COMPATÍVEL COM APK */
+.scan-button {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom) + 25px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  background: #ff7043;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.scan-button ion-icon {
+  font-size: 32px;
+}
+
+
+ion-toolbar {
+  --background: #fff;
+  --color: #000;
+}
+
+.categories-container {
+  padding: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.category-card {
+  position: relative;
+  display: inline-block;
+  width: 140px;
+  height: 200px;
+  margin-right: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-title {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+/* * Define o fundo da página como branco, garantindo
+ * que o modo claro/escuro não altere essa cor.
+ */
+ion-content {
+  --background: #ffffff;
+}
+
+/* * Opcional, mas recomendado:
+ * Se você quiser garantir que o fundo da sua toolbar também seja sempre branco
+ * e que o texto da toolbar (título e botões) seja escuro.
+ */
+ion-toolbar {
+  --background: #ffffff;
+  --color: #000000; /* Define a cor do texto/ícones para preto */
+}
+
+

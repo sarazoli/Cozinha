@@ -1,0 +1,21 @@
+ion-toolbar {
+  position: relative;
+
+}
+ion-toolbar {
+  box-shadow: 0 2px 0 0 rgb(222, 113, 35); /* 1px de sombra na parte de baixo */
+}
+
+ion-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+ion-card{
+
+
+    border-radius:10px;
+    
+}

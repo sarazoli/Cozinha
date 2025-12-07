@@ -1,0 +1,74 @@
+ion-toolbar {
+  position: relative;
+
+}
+ion-toolbar {
+  box-shadow: 0 2px 0 0 rgb(222, 113, 35); /* 1px de sombra na parte de baixo */
+}
+
+
+
+
+ion-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+ion-card {
+
+  border-radius: 12px;          /* borda arredondada */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra leve */
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;      // espaço entre os campos
+  margin-top: 24px;
+}
+
+.input-custom {
+background:rgba(243, 222, 207, 1) ; // bege parecido com o Figma
+  --border-radius: 15px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --placeholder-color: #6b6b6b;
+  border-radius: 15px;    // garante arredondamento externo
+  height: 50px;
+}
+
+
+
+.input-custom {
+  --background: transparent;// bege parecido com o Figma
+
+}
+
+.group-input {
+  background:rgba(243, 222, 207, 1) ;     // cor do bloco
+  border-radius: 15px;
+  overflow: hidden;        // garante o arredondamento total
+  display: flex;
+  flex-direction: column;
+}
+
+.input-top,
+.input-bottom {
+  --background: transparent;   // fundo transparente pra não sobrescrever o bloco
+  --padding-start: 16px;
+  --padding-end: 16px;
+    --placeholder-color: #6b6b6b;
+  height: 50px;
+}
+
+/* Linha divisória entre os dois campos */
+.input-top {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+ion-input {
+  --highlight-color-focused: rgb(222, 113, 35);;
+}
+ 

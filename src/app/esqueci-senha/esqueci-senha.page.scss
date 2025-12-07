@@ -1,0 +1,60 @@
+.esqueceu-senha-bg {
+  --background: linear-gradient(135deg, #df6807, #910202);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.container {
+    margin-top: 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+align-items: center;
+
+}
+
+.icon {
+  font-size: 80px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+h2 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.input-field {
+  background: rgba(255, 255, 255, 0.596);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+ion-button[color="light"] {
+
+  font-weight: bold; /* deixa o texto em negrito */
+  font-size: 16px; /* opcional: aumenta um pouquinho o tamanho */
+  text-transform: none; /* remove o CAPS se quiser manter normal */
+  letter-spacing: 0.5px; /* dá um espacinho suave entre as letras */
+}
+
+ion-button[color="light"]:hover,
+ion-button[color="light"]:focus {
+  opacity: 0.8; /* efeito suave ao tocar ou passar o mouse */
+}
+
+.btn-enviar {
+  --background: #fff;
+  --color: #680000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

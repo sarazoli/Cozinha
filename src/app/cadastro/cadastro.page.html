@@ -1,0 +1,106 @@
+<ion-content [fullscreen]="true">
+
+  <div class="top-image">
+    <img src="/assets/fotodefundo.jpg" alt="bgapp" />
+  </div>
+
+  <div class="form-container">
+
+    <h2>Bem-vindo(a)!</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <!-- NOME -->
+      <ion-item fill="outline">
+        <ion-label position="floating">Nome: <span class="required">*</span></ion-label>
+        <ion-input formControlName="nome"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched">
+        <p class="error-msg">O nome é obrigatório.</p>
+      </ion-text>
+
+
+      <!-- CELULAR -->
+      <ion-item fill="outline">
+        <ion-label position="floating">Celular: <span class="required">*</span></ion-label>
+        <ion-input type="tel" formControlName="celular" ></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="form.get('celular')?.invalid && form.get('celular')?.touched">
+        <p class="error-msg">O celular é obrigatório. EX: (99) 99999-9999</p>
+      </ion-text>
+
+
+      <!-- EMAIL -->
+      <ion-item fill="outline">
+        <ion-label position="floating">Email: <span class="required">*</span></ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched">
+        <p class="error-msg">O e-mail é obrigatório. </p>
+      </ion-text>
+
+      <ion-text color="danger" *ngIf="form.get('email')?.errors?.['email'] && form.get('email')?.touched">
+        <p class="error-msg">Digite um e-mail válido. Exemplo@xxxxx.com </p>
+      </ion-text>
+
+
+      <!-- SENHA -->
+      <ion-item fill="outline">
+        <ion-label position="floating">Senha: <span class="required">*</span></ion-label>
+        <ion-input type="password" formControlName="senha"></ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="form.get('senha')?.errors?.['required'] && form.get('senha')?.touched">
+        <p class="error-msg">A senha é obrigatória.</p>
+      </ion-text>
+
+      <ion-text color="danger" *ngIf="form.get('senha')?.errors?.['minlength'] && form.get('senha')?.touched">
+        <p class="error-msg">A senha precisa ter no mínimo 8 caracteres.</p>
+      </ion-text>
+
+
+      <!-- CONFIRMAR SENHA -->
+      <ion-item fill="outline">
+        <ion-label position="floating">Confirmar Senha: <span class="required">*</span></ion-label>
+        <ion-input type="password" formControlName="confirmacaoSenha"></ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="form.get('confirmacaoSenha')?.errors?.['mismatch'] ">
+        <p class="error-msg">As senhas não conferem.</p>
+      </ion-text>
+          <ion-text color="danger" *ngIf=" form.get('confirmacaoSenha')?.touched">
+        <p class="error-msg">Preencha todos os campos.</p>
+      </ion-text>
+
+
+      <!-- BOTÃO -->
+      <ion-button expand="block" type="submit" class="btn-proximo">
+        Próximo
+      </ion-button>
+
+    </form>
+
+    <!-- ERRO GERAL -->
+    <ion-text color="danger" *ngIf="error">
+      <p class="ion-padding-top">{{ error }}</p>
+    </ion-text>
+
+
+    <p style="margin-top: 16px; text-align: center;">Já tem conta?</p>
+
+    <div class="divider">Ou</div>
+
+    <div class="social-buttons">
+      <ion-icon name="logo-facebook" class="social fb"></ion-icon>
+      <ion-icon name="logo-google" class="social g"></ion-icon>
+      <ion-icon name="logo-apple" class="social apple"></ion-icon>
+    </div>
+
+    <p class="footer">
+      Já tem uma conta? <a routerLink="/login">Entre agora!</a>
+    </p>
+
+  </div>
+
+</ion-content>

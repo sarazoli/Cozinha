@@ -1,0 +1,50 @@
+ion-toolbar {
+  position: relative;
+
+}
+ion-toolbar {
+  box-shadow: 0 2px 0 0 rgb(222, 113, 35); /* 1px de sombra na parte de baixo */
+}
+
+ion-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-sobre p {
+  
+  font-size:13px;
+  line-height:1.5;
+  margin-bottom: 15px;
+}
+
+#titulo-card{
+    font-size:14px;
+    font-weight: bold; 
+     margin-bottom: 15px;
+}
+
+
+.laranja{
+
+   font-size: 14px;
+   color:  rgb(222, 113, 35);
+  
+}
+
+ion-card{
+    border-radius:10px;}
+
+.card-sobre{
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  border-radius:8px;
+  background:rgba(200, 174, 156, 0.16)
+  ;
+  box-shadow: 0 4x 0  #000000;
+  max-width: 500px;
+  width: 90%;
+  margin:10px auto;
+  text-align: justify;
+}

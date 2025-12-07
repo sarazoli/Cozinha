@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="voltar()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Carregando -->
+  <div *ngIf="carregando" class="ion-padding">
+    <p>Carregando detalhes da receita...</p>
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+
+  <!-- Conteúdo -->
+  <div *ngIf="!carregando && receita">
+
+    <!-- IMAGEM PRINCIPAL -->
+    <div class="header-image-container">
+      <img [src]="receita?.imagem" alt="Imagem da receita" [alt]="receita.nome || 'Receita'" />
+    </div>
+
+    <!-- TÍTULO SOBREPOSTO + ESTRELA -->
+    <div class="title-overlay">
+      <h1>{{ receita.nome || 'Título Indisponível' }}</h1>
+
+    
+    </div>
+
+    <!-- FOLHA BRANCA -->
+    <div class="content-sheet">
+
+      <!-- TABS -->
+      <ion-segment (ionChange)="setActiveTab($event)" [(ngModel)]="activeTab" class="recipe-segment">
+        <ion-segment-button value="ingredientes">
+          <ion-label>Ingredientes</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="preparo">
+          <ion-label>Modo de preparo</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <!-- CONTEÚDO DAS TABS -->
+      <div class="tab-content">
+
+        <!-- INGREDIENTES -->
+        <ion-list lines="none" *ngIf="activeTab === 'ingredientes'">
+
+          <ion-item *ngFor="let ingrediente of receita.ingredientes">
+            <ion-checkbox slot="start" legacy="true"></ion-checkbox>
+            <ion-label>{{ ingrediente }}</ion-label>
+          </ion-item>
+
+          <p *ngIf="!receita.ingredientes || receita.ingredientes.length === 0" class="ion-padding">
+            Lista de ingredientes não disponível.
+          </p>
+        </ion-list>
+
+        <!-- PREPARO -->
+        <div *ngIf="activeTab === 'preparo'" class="ion-padding preparo-container">
+          <p>{{ receita.modo_preparo || 'Instruções de preparo não disponíveis.' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERRO -->
+  <div *ngIf="!carregando && !receita" class="ion-padding">
+    <h2>Ops!</h2>
+    <p>Não foi possível carregar os detalhes desta receita.</p>
+  </div>
+
+</ion-content>

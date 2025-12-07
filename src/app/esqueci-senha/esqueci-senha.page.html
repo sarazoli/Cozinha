@@ -1,0 +1,20 @@
+<ion-content class="ion-padding esqueceu-senha-bg">
+  <div class="container">
+    <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+    <h2>Esqueceu sua senha?</h2>
+    <p>Digite seu e-mail para receber o link de redefinição.</p>
+
+    <ion-item lines="none" class="input-field">
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" shape="round" class="btn-enviar" (click)="resetarSenha()">
+      Enviar link
+    </ion-button>
+
+    <ion-button  class="voltarL" fill="clear" color="light" routerLink="/login">
+      Voltar para o login
+    </ion-button>
+  </div>
+</ion-content>

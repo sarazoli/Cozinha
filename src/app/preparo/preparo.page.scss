@@ -1,0 +1,131 @@
+/* 1. CORRIGE O "FUNDO PRETO" */
+/* Define um fundo cinza claro para o ion-content (o fundo atrás da folha branca) */
+ion-content {
+  --background: #f4f4f4;
+}
+
+/* 2. ESTILO DO HEADER TRANSPARENTE */
+ion-header {
+      position: fixed;
+  ion-toolbar {
+    --background: transparent;
+    --color: white; // Cor dos ícones
+  }
+  
+  /* Estilo dos botões de voltar/pesquisar (círculo escuro) */
+  ion-back-button, ion-button {
+
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    --color: white !important;
+  }
+}
+
+/* 3. IMAGEM  (Seu HTML: .header-image-container) */
+.header-image-container {
+  height: 300px; // Altura da imagem
+  width: 100%;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Garante que a imagem cubra o espaço
+  }
+}
+
+/* 4. TÍTULO (SOBREPOSTOS) (Seu HTML: .title-overlay) */
+.title-overlay {
+  position: absolute;
+  top: 150px; // Ajuste para posicionar
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10; // Fica na frente da imagem
+
+  h1 {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); // Sombra para legibilidade
+  }
+
+  .fav-button {
+    --color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    // Remove paddings extras do ion-button
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+}
+
+/* 5. A "FOLHA BRANCA" DE CONTEÚDO (Seu HTML: .content-sheet) */
+.content-sheet {
+  background: #ffffff; // Fundo branco
+  width: 100%;
+  min-height: 500px; // Garante que preencha o resto da tela
+  
+  /* Cantos arredondados SÓ NO TOPO */
+  border-radius: 20px 20px 0 0;
+  
+  /* Puxa a folha para CIMA, sobrepondo a imagem */
+  margin-top: -80px; // <-- Esta é a mágica!
+  
+  position: relative; // Necessário para o z-index
+  z-index: 11; // Fica na frente da imagem e do título
+  
+  padding-top: 16px; // Espaçamento interno
+}
+
+/* 6. ESTILO DAS TABS (SEGMENT) (Seu HTML: .recipe-segment) */
+.recipe-segment {
+  --background: transparent; // Fundo transparente
+  margin-bottom: 16px;
+
+  ion-segment-button {
+    --color: var(--ion-color-medium); // Cor do texto inativo (cinza)
+    --color-checked: #ff8c00; // Cor do texto ativo (Laranja - mude se quiser)
+    --indicator-color: #ff8c00; // Cor da linha (Laranja)
+    text-transform: none; // Tira o ALL CAPS
+    font-weight: 600;
+  }
+}
+
+/* 7. ESTILO DA LISTA DE INGREDIENTES */
+.tab-content {
+  padding: 0 16px;
+}
+
+ion-list {
+  background: transparent; // Fundo transparente para a lista
+  padding: 0; // Remove padding padrão
+}
+
+ion-item {
+  --background: transparent; // Fundo transparente para os itens
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 8px;
+  color: #000000; // Cor do texto escura para a folha branca
+}
+
+/* Deixa o checkbox redondo como na imagem */
+ion-checkbox {
+  --border-radius: 50%;
+  margin-right: 16px;
+}
+
+.preparo-container {
+  padding: 16px 0; // Ajusta padding
+  color: #333; // Cor do texto escura
+  line-height: 1.6;
+}

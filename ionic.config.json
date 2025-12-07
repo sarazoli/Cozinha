@@ -1,0 +1,16 @@
+{
+  "name": "ScannerCook",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone",
+  "proxies": [
+    {
+      "path": "/spoonacular-api",
+      "proxyUrl": "https://api.spoonacular.com",
+      "proxyOptions": {
+        "changeOrigin": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+/* ========================================================================= */
+/* CONTAINER PRINCIPAL (ion-content) */
+/* ========================================================================= */
+/* Fundo */
+.splash-screen {
+  --background: url('src/assets/fotodefundo.jpg') no-repeat center center / cover;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background);
+  
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overlay vermelho translúcido */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(169, 18, 18, 0.65);
+  z-index: 0;
+}
+
+/* Conteúdo principal */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================================================= */
+/* SEÇÃO SUPERIOR (LOGO E TÍTULOS) */
+/* ========================================================================= */
+.top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px; /* Afasta um pouco do topo da tela */
+}
+
+/* O header-content não precisa mais de position: relative */
+.header-content{
+  text-align: center;
+}
+
+/* Estilos para o logo e os textos */
+.logo {
+  width: 120px;
+  margin-bottom: -10px;
+}
+
+.title {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+
+}
+
+/* ========================================================================= */
+/* SEÇÃO INFERIOR (BOTÕES E DIVISOR) */
+/* ========================================================================= */
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px; /* Limita a largura dos botões */
+  margin-bottom: 60px; /* Afasta da base da tela */
+}
+
+.login-button {
+  --background: #a91212; /* Cor vermelha do botão */
+  --border-radius: 8px;
+  --height: 50px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.create-account-button {
+  --background: #ffffff; /* Cor vermelha do botão */
+  --border-radius: 8px;
+  --height: 50px;
+  font-size: 16px;
+  color: #a91212;
+  font-weight: bold;
+  margin-top: 20px; /* Espaçamento entre Login e Criar Conta */
+}
+
+
+
+/* .divider {
+  display: flex; /* CHAVE: Ativa o Flexbox para alinhar os 3 itens 
+  align-items: center; /* Alinha verticalmente a linha com o texto 
+  width: 100%;
+  margin: 30px 0; /* Espaçamento vertical 
+}
+
+/* Estilo para as novas linhas (esquerda e direita) 
+.divider .line {
+ CHAVE: Faz a linha ocupar o máximo de espaço disponível de forma igual 
+  flex: 1; 
+  
+  height: 1px;
+  /* Use o gradiente para ter o efeito de fade nas pontas que você já queria 
+  background: linear-gradient(
+    to right,
+    transparent 0%,      
+    white 50%,           
+    white 100%    
+  );
+}
+
+/* O gradiente da LINHA DA DIREITA precisa ser espelhado 
+.divider .line:last-child {
+   background: linear-gradient(
+    to left, /* MUDANÇA: Gradiente vai para a esquerda 
+    transparent 0%,      
+    white 50%,           
+    white 100%    
+  );
+}
+
+.divider-text {
+  /* Adiciona espaço horizontal ao redor do texto "Ou" 
+  margin: 0 10px;
+  padding: 0 10px; 
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+} 
+.guest-link {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+} */
+/* ========================================================================= */
+/* DIVISOR (LINHA COM FADE) */
+/* ========================================================================= */

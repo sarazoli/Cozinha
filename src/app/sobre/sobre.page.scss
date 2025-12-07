@@ -1,0 +1,127 @@
+ion-toolbar {
+  position: relative;
+
+}
+ion-toolbar {
+  box-shadow: 0 2px 0 0 rgb(222, 113, 35); /* 1px de sombra na parte de baixo */
+}
+
+
+ion-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+ion-card{
+    border-radius:10px;}
+
+.card-sobre{
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  border-radius:8px;
+  background:rgba(200, 174, 156, 0.16)
+  ;
+  box-shadow: 0 4x 0  #000000;
+  max-width: 500px;
+  width: 90%;
+  margin:10px auto;
+  text-align: justify;
+}
+.card-membro ion-item a {
+  /* O Flexbox do ion-item já cuida do posicionamento, mas é bom garantir */
+  display: flex;
+  align-items: center;
+   color: black; 
+    font-size: 30px; 
+  
+  /* Remove qualquer decoração padrão de link, como sublinhado */
+  text-decoration: none; 
+}
+.card-membro {
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  border-radius:10px;
+  background:rgba(200, 174, 156, 0.16);  
+}
+.card-membro ion-item{
+--background: transparent;
+}
+
+.card-sobre p {
+  
+  font-size:13px;
+  line-height:1.5;
+  margin-bottom: 15px;
+}
+
+#titulo-card{
+    font-size:14px;
+    font-weight: bold; 
+     margin-bottom: 15px;
+}
+
+
+.laranja{
+
+   font-size: 14px;
+   color:  rgb(222, 113, 35);
+  
+}
+
+.divider-right {
+    display: flex;
+    align-items: center;
+    text-align: left; /* Garante que o texto se alinhe à esquerda */
+    
+    /* Centraliza o container inteiro e limita a largura, como os seus cards */
+    max-width: 500px;
+    width: 100%; /*tamanho do espaço da linha*/
+
+
+    color: #474747;
+    font-weight: 900 ; 
+
+    font-size: 19px; 
+    
+    /* Adiciona espaço ENTRE o texto e a linha */
+    padding-right: 5px;
+}
+
+/* ❌ REGRA: Desativa a Linha da Esquerda (::before) */
+.divider-right::before {
+    content: none; /* Remove a linha antes do texto */
+}
+
+/* ✅ REGRA: Ativa e Estiliza a Linha da Direita (::after) */
+.divider-right::after {
+    content: "";
+    flex: 1; /* Faz a linha ocupar TODO o espaço restante */
+    border-bottom: 1px solid black; /* Linha fina e preta */
+    margin-left: 20px; /* Mais espaço entre o texto e a linha */
+}
+
+.info{
+  border-radius:8px;
+  max-width: 500px;
+  width: 90%;
+  margin:15px auto;
+ 
+}
+
+
+
+
+ion-badge.recurso-badge {
+  background: rgb(222, 113, 35);
+}
+
+ion-badge.recurso-badge {
+  --background: transparent; 
+ 
+  
+}
+
+
+ion-toolbar {
+
+  border-bottom: 2px solid #ff7f32; // linha laranja
+}

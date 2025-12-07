@@ -1,0 +1,10 @@
+
+
+{
+  
+  "appId": "com.scanner.cook", 
+  
+  "appName": "ScannerCook",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

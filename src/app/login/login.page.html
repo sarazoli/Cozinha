@@ -1,0 +1,75 @@
+<ion-content class="login-page">
+  <div class="top-background"></div>
+
+  <div class="login-card">
+    <h1 class="welcome-title">Bem-vindo de volta!</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onLogin()">
+
+      <!-- Email -->
+      <ion-label position="floating" class="input-label">
+        Email: <span class="required-star">*</span>
+      </ion-label>
+      <ion-input type="email" formControlName="email"  class="custom-input"></ion-input>
+      <div *ngIf="form.controls['email'].touched && form.controls['email'].invalid"  color="danger" class="error-message">
+        <span *ngIf="form.controls['email'].hasError('required')">Ah, você esqueceu de colocar o email.</span>
+        <span *ngIf="form.controls['email'].hasError('email')"> formato de email inválido.</span>
+        <span *ngIf="form.controls['email'].hasError('server')">{{ form.controls['email'].getError('server') }}</span>
+      </div>
+
+      <!-- Senha -->
+      <ion-label position="floating" class="input-label">
+        Senha: <span class="required-star">*</span>
+      </ion-label>
+      <ion-input type="password" formControlName="senha"class="custom-input"></ion-input>
+      <div *ngIf="form.controls['senha'].touched && form.controls['senha'].invalid" class="error-message">
+        <span *ngIf="form.controls['senha'].hasError('required')">Ah, você esqueceu de colocar a senha.</span>
+  
+         
+        
+      </div>
+
+      <!-- Mensagem de erro geral -->
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+
+      <!-- Link esqueci a senha -->
+      <a href="#" class="forgot-link" routerLink="/esqueci-senha" >Esqueceu a senha?</a>
+
+      <!-- Botão de login -->
+      <ion-button type="submit" expand="block" class="main-login-button">Login</ion-button>
+    </form>
+
+    <!-- Divider -->
+    <div class="divider">
+      <div class="line"></div>
+      <span class="divider-text">Ou</span>
+      <div class="line"></div>
+    </div>
+
+    <!-- Login social -->
+<div class="social-auth-buttons">
+    <!-- Botão Facebook -->
+    <ion-button fill="clear" (click)="loginComFacebook()" [disabled]="loading">
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+    </ion-button>
+
+    <!-- Botão Google -->
+    <ion-button fill="clear" (click)="loginComGoogle()" [disabled]="loading">
+        <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+    </ion-button>
+
+    <!-- Botão Apple (Opcional) -->
+    <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="logo-apple"></ion-icon>
+    </ion-button>
+</div>
+
+
+    <!-- Criar conta -->
+    <p class="create-account-prompt">
+      É novo aqui? <a routerLink="/cadastro" class="signup-link">Crie uma conta!</a>
+    </p>
+  </div>
+</ion-content>

@@ -1,0 +1,113 @@
+/* ---------------------------------------------------- */
+/* 1. SEÇÃO DE RECEITAS (Container de toda a lista) */
+.toolbar-transparent {
+  --background: rgba(255, 255, 255, 0.404) !important;
+  --ion-color-base: transparent !important;
+// cor do ícone e do título
+
+    color: #000000;
+}
+
+.ion-title {
+  color: #000000;
+  font-weight: bold;
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. GRADE (Garante que as colunas sejam fluidas) */
+/* ---------------------------------------------------- */
+ion-grid {
+  padding: 0;
+}
+
+ion-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ion-col {
+  /* Garante que o espaçamento entre os cards seja uniforme */
+  padding: 8px; 
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. CARD DE RECEITA (Onde está o visual) */
+/* ---------------------------------------------------- */
+.recipes-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    color: gray;
+    margin-top: 2px;
+  }
+}
+
+.recipe-card {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+
+  img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .recipe-info {
+    padding: 10px;
+
+    h3 {
+      font-size: 1em;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.8em;
+      color: gray;
+      margin: 0;
+    }
+  }
+}
+
+/* * Define o fundo da página como branco, garantindo
+ * que o modo claro/escuro não altere essa cor.
+ */
+ion-content {
+  --background: #ffffff;
+}
+
+/* 🚨 REGRAS DE VISIBILIDADE DO BOTÃO DE HOME 🚨 */
+
+/* Regra anterior para ion-toolbar genérica removida para evitar conflito com .toolbar-transparent */
+
+/* 1. Força a cor do texto/ícone do botão para PRETO */
+.btn-home {
+  /* Força a cor do ícone usando a variável CSS do Ionic */
+  --color: #000000 !important;
+}
+
+/* 2. Garante que o ícone em si seja preto */
+.btn-home ion-icon {
+  color: #000000 !important;
+}
+
+/* 3. REGRA EXTRA: Garante que o botão tenha um fundo transparente ou branco para contraste */
+.btn-home {
+    /* Garante que o botão não tenha cor de fundo que o esconda */
+    --background: transparent !important;
+    /* Se você quiser forçar um círculo branco ao redor do ícone (como o botão de 'Voltar' original), use:
+    --background: #ffffff !important;
+    --border-radius: 50% !important; */
+}

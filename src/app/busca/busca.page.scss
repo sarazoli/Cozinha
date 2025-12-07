@@ -1,0 +1,99 @@
+.busca-content {
+  background: #ffffff;
+}
+
+.custom-toolbar{
+
+
+    background: transparent;
+}
+
+/* caixa da busca */
+.search-container {
+    align-items: center;
+  padding: 10px;
+}
+
+ion-searchbar {
+  --background: #f2f2f2;
+  --border-radius: 10px;
+  --box-shadow: none;
+  --placeholder-color: #9b9b9b;
+}
+
+
+
+
+/* linha laranja */
+.divider {
+  width: 100%;
+  height: 2px;
+  background: #eb7215;
+  margin-bottom: 20px;
+}
+
+/* lista */
+.lista-receitas {
+  padding: 0 16px;
+}
+
+/* loading e vazio */
+.loading,
+.vazio {
+  text-align: center;
+  color: #777;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  gap: 12px;
+}
+
+/* imagem */
+.img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* textos */
+.dados {
+  flex: 1;
+}
+
+.dados h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dados p {
+  margin: 0;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+/* botão Abrir */
+.btn-abrir {
+  background: black;
+  color: white;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 16px;
+  border: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.btn-abrir:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}

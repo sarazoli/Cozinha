@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar class="toolbar-transparent">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/homepage" ></ion-back-button>
+    </ion-buttons>
+        <ion-title class="title">Receitas: {{ categoriaAtiva }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+    <!-- Título dinâmico da categoria -->
+
+ 
+
+  <div class="recipes-section ion-padding-horizontal">
+    
+    <!-- Mensagem de Carregamento -->
+    <p *ngIf="carregando" class="status-msg">
+      Filtrando receitas de {{ categoriaAtiva }}...
+      <ion-spinner name="crescent"></ion-spinner>
+    </p>
+
+    <!-- Exibição dos Resultados -->
+    <ng-container *ngIf="receitasFiltradas$ | async as receitas">
+      
+      <!-- Mensagem de Nenhum Resultado -->
+      <p *ngIf="!carregando && receitas.length === 0" class="status-msg">
+        Nenhuma receita encontrada na categoria **{{ categoriaAtiva }}**.
+      </p>
+
+      <ion-grid *ngIf="!carregando && receitas.length > 0">
+        <ion-row>
+          <ion-col io
+            size="6" 
+            *ngFor="let receita of receitas" 
+            (click)="verDetalhesReceita(receita.id || receita._id || receita.recipeId)" 
+            class="receita-clicavel"
+          >
+            <div class="recipe-card">
+         
+              <img [src]="receita.imagem || '/assets/placeholder.jpg'" [alt]="receita.nome" />
+          
+              <div class="recipe-info">
+                <p>{{ receita.nome || 'Título Indisponível' }}</p>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ng-container>
+
+  </div>
+</ion-content>
