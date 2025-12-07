@@ -12,6 +12,13 @@ Cozinha! é um aplicativo mobile desenvolvido com **Ionic + Angular** e integrad
 
 ---
 
+## Protótipo / Design
+
+Você pode ver o protótipo e design do app no Figma:  
+https://www.figma.com/design/bmbD1WbcWoQ1D5SCjv0XAS/App-de-Receitas?node-id=0-1&p=f&t=o2e5naZ0xmsnmIUx-0
+
+---
+
 ## Objetivo
 
 Ajudar usuários a encontrar receitas a partir de imagens de alimentos, promovendo praticidade, redução de desperdício e incentivo à criatividade na cozinha.
